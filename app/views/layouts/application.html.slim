@@ -18,8 +18,11 @@ html
     = stylesheet_link_tag :app, "data-turbo-track": "reload"
     = javascript_importmap_tags
 
-  body
-    = render Default::Navbar::NavbarComponent.new
+  body class="flex"
+    = render Default::Sidebar::SidebarComponent.new
     
-    main class="container mx-auto mt-28 px-5 flex"
-      = yield
+    div class="flex flex-col flex-1"
+      = render Default::Navbar::NavbarComponent.new
+    
+      main class="container mx-auto mt-28 px-5 flex"
+        = yield
